@@ -11,6 +11,14 @@ spring:
     url: xxx
     username: xxx
     password: xxx
+  data:
+    # Redis 配置
+    redis:
+      database: 0
+      host: xxx
+      password: xxx
+      timeout: 5000
+      port: 6379
 # mybatis-plus
 mybatis-plus:
   configuration:
