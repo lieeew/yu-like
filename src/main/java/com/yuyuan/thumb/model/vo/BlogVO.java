@@ -1,25 +1,19 @@
-package com.yuyuan.thumb.model.entity;
+package com.yuyuan.thumb.model.vo;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableId;
-import com.baomidou.mybatisplus.annotation.TableName;
-import java.util.Date;
 import lombok.Data;
+
+import java.util.Date;
 
 /**
  * 
  * @TableName blog
  */
-@TableName(value ="blog")
 @Data
-public class Blog {
+public class BlogVO {
     /**
      * 
      */
-    @TableId(type = IdType.ASSIGN_ID)
     private Long id;
-
-    private Long userId;
 
     /**
      * 标题
@@ -47,7 +41,8 @@ public class Blog {
     private Date createTime;
 
     /**
-     * 更新时间
+     * 是否已点赞
      */
-    private Date updateTime;
+    private Boolean hasThumb;
+
 }
