@@ -3,7 +3,6 @@ package com.yuyuan.thumb.service.impl;
 import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.util.ObjUtil;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.yuyuan.thumb.constant.ThumbConstant;
 import com.yuyuan.thumb.model.entity.Blog;
 import com.yuyuan.thumb.model.entity.User;
 import com.yuyuan.thumb.model.vo.BlogVO;
@@ -11,6 +10,7 @@ import com.yuyuan.thumb.service.BlogService;
 import com.yuyuan.thumb.mapper.BlogMapper;
 import com.yuyuan.thumb.service.ThumbService;
 import com.yuyuan.thumb.service.UserService;
+import com.yuyuan.thumb.util.RedisKeyUtil;
 import jakarta.annotation.Resource;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.context.annotation.Lazy;
@@ -64,7 +64,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog>
         if (ObjUtil.isNotEmpty(loginUser)) {
             List<Object> blogIdList = blogList.stream().map(blog -> blog.getId().toString()).collect(Collectors.toList());
             // 获取点赞
-            List<Object> thumbList = redisTemplate.opsForHash().multiGet(ThumbConstant.USER_THUMB_KEY_PREFIX + loginUser.getId(), blogIdList);
+            List<Object> thumbList = redisTemplate.opsForHash().multiGet(RedisKeyUtil.getUserThumbKey(loginUser.getId()), blogIdList);
             for (int i = 0; i < thumbList.size(); i++) {
                 if (thumbList.get(i) == null) {
                     continue;
