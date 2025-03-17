@@ -24,7 +24,7 @@ import java.util.*;
  *
  * @author pine
  */
-@Component
+// @Component
 @Slf4j
 public class SyncThumb2DBJob {
 

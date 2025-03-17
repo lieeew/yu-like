@@ -21,7 +21,7 @@ import java.util.Set;
  *
  * @author pine
  */
-@Component
+// @Component
 @Slf4j
 public class SyncThumb2DBCompensatoryJob {
 
