@@ -10,6 +10,8 @@ public interface ThumbConstant {
      */
     String USER_THUMB_KEY_PREFIX = "thumb:";
 
+    Long UN_THUMB_CONSTANT = 0L;
+
     /**
      * 临时 点赞记录 key
      */
