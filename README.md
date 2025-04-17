@@ -66,12 +66,6 @@
 
 > 在线学习：https://www.codefather.cn/course/yulike ，可以 **免费试看** 
 
-而且为了让更多同学参与学习，我特么直接把所有代码 **完整开源** ！能力强的同学可以自学，点个 star 就算对鱼皮的支持啦~
-
-> 开源仓库：https://github.com/liyupi/yu-like
-
-![](https://pic.yupi.icu/1/image-20250116123632636.png)
-
 
 
 ### 项目收获
