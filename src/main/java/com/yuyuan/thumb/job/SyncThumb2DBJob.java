@@ -37,7 +37,7 @@ public class SyncThumb2DBJob {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
 
-    @Scheduled(initialDelay = 10000, fixedDelay = 10000)
+    @Scheduled(fixedRate = 10000)
     @Transactional(rollbackFor = Exception.class)
     public void run() {
         log.info("开始执行");
