@@ -5,8 +5,8 @@
 > 本项目为进阶教学项目，提供完整文字教程 + 简历写法 + 面试题解 + 答疑服务，帮你提升项目能力，给简历增加亮点！
 >
 > ⭐️ 加入项目系列学习：[加入编程导航](https://www.codefather.cn/vip)
-
-
+>
+> 视频介绍：https://www.bilibili.com/video/BV1Eq5DzcE9o
 
 大家好，我是程序员鱼皮。又经过了一段时间的爆肝，我们团队在 [编程导航](https://mp.weixin.qq.com/s/I1oD6pAaWBvGLyFDT9AgvA?token=1925632390&lang=zh_CN) 推出了第 12 套有 **保姆级教程** 的新项目 ——  亿级流量点赞系统，完结啦！
 
