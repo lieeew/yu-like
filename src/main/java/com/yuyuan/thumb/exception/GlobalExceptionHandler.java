@@ -24,4 +24,10 @@ public class GlobalExceptionHandler {
         log.error(e.getMessage(), e);
         return ResultUtils.error(ErrorCode.OPERATION_ERROR, e.getMessage());
     }
+
+    @ExceptionHandler(UnsupportedOperationException.class)
+    public BaseResponse<?> unSupportOperationHandler(UnsupportedOperationException e) {
+        log.error(e.getMessage(), e);
+        return ResultUtils.success(false);
+    }
 }

@@ -98,16 +98,15 @@ public class ThumbServiceImpl extends ServiceImpl<ThumbMapper, Thumb>
                         .eq(Blog::getId, blogId)
                         .setSql("thumbCount = thumbCount - 1")
                         .update();
-                boolean success = update && this.removeById((Long)thumbIdObj);
-
-                // 点赞记录从 Redis 删除
-                if (success) {
-                    String hashKey = ThumbConstant.USER_THUMB_KEY_PREFIX + loginUser.getId();
-                    String fieldKey = blogId.toString();
-                    redisTemplate.opsForHash().delete(hashKey, fieldKey);
-                    cacheManager.putIfPresent(hashKey, fieldKey, ThumbConstant.UN_THUMB_CONSTANT);
+                boolean success = update && this.removeById((Long) thumbIdObj);
+                if (!success) {
+                    throw new UnsupportedOperationException("更新失败");
                 }
-                return success;
+                String hashKey = ThumbConstant.USER_THUMB_KEY_PREFIX + loginUser.getId();
+                String fieldKey = blogId.toString();
+                redisTemplate.opsForHash().delete(hashKey, fieldKey);
+                cacheManager.putIfPresent(hashKey, fieldKey, ThumbConstant.UN_THUMB_CONSTANT);
+                return true;
             });
         }
     }
